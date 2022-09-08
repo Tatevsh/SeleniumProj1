@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "evklAZgc8FF4p68BmOyuRHAHMT8xg/r5FkBVKYkFuRaK23TtuzvfH3GxoM51H5aYJh/q5zOQR2rf6XSYBAHiCw==",
+  "dgSpecHash": "w3R87YQlbs5zW1W/vUA33QoNnMzkPRkkWJtqxt9bbEfUQMKWD3xyQbRtjzEoSHdtaPIU+XDtPGNkrHvKupdiDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sololearn\\source\\repos\\TestProject1\\TestProject1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sololearn\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\Sololearn\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\Sololearn\\.nuget\\packages\\microsoft.codecoverage\\17.3.0\\microsoft.codecoverage.17.3.0.nupkg.sha512",
     "C:\\Users\\Sololearn\\.nuget\\packages\\microsoft.net.test.sdk\\17.3.0\\microsoft.net.test.sdk.17.3.0.nupkg.sha512",
     "C:\\Users\\Sololearn\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
@@ -16,6 +17,7 @@
     "C:\\Users\\Sololearn\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
     "C:\\Users\\Sololearn\\.nuget\\packages\\nunit.analyzers\\3.3.0\\nunit.analyzers.3.3.0.nupkg.sha512",
     "C:\\Users\\Sololearn\\.nuget\\packages\\nunit3testadapter\\4.2.1\\nunit3testadapter.4.2.1.nupkg.sha512",
+    "C:\\Users\\Sololearn\\.nuget\\packages\\selenium.support\\4.4.0\\selenium.support.4.4.0.nupkg.sha512",
     "C:\\Users\\Sololearn\\.nuget\\packages\\selenium.webdriver\\4.4.0\\selenium.webdriver.4.4.0.nupkg.sha512",
     "C:\\Users\\Sololearn\\.nuget\\packages\\selenium.webdriver.chromedriver\\104.0.5112.7900\\selenium.webdriver.chromedriver.104.0.5112.7900.nupkg.sha512",
     "C:\\Users\\Sololearn\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"

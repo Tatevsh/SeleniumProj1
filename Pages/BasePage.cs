@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace TestProject1.Pages
 {
-    public class HomePage : BasePage
+    public class BasePage : DriverHelper
     {
-        IWebElement buttonSignin => Driver.FindElement(By.XPath("//a[normalize-space()='Sign in']"));
-
-        public void ClickSignin()
+        private static IWebDriver Driver;
+        public BasePage()
         {
-            buttonSignin.Click();
+            Driver = DriverHelper.Driver;
         }
     }
 }

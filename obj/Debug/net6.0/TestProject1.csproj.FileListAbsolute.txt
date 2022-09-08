@@ -98,3 +98,5 @@ C:\Users\Sololearn\source\repos\TestProject1\obj\Debug\net6.0\refint\TestProject
 C:\Users\Sololearn\source\repos\TestProject1\obj\Debug\net6.0\TestProject1.pdb
 C:\Users\Sololearn\source\repos\TestProject1\obj\Debug\net6.0\TestProject1.genruntimeconfig.cache
 C:\Users\Sololearn\source\repos\TestProject1\obj\Debug\net6.0\ref\TestProject1.dll
+C:\Users\Sololearn\source\repos\TestProject1\bin\Debug\net6.0\SeleniumExtras.WaitHelpers.dll
+C:\Users\Sololearn\source\repos\TestProject1\bin\Debug\net6.0\WebDriver.Support.dll

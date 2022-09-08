@@ -9,6 +9,6 @@ namespace TestProject1
 {
     public class DriverHelper
     {
-        public IWebDriver Driver { get; set; }
+        public static IWebDriver Driver;
     }
 }
