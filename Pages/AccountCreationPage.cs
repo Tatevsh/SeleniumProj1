@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,21 +16,20 @@ namespace TestProject1.Pages
         IWebElement firstNameField => Driver.FindElement(By.Id("customer_firstname"));
         IWebElement lastNameField => Driver.FindElement(By.Id("customer_lastname"));
         IWebElement passwordField => Driver.FindElement(By.Id("passwd"));
-        List<IWebElement> radioButtons => (List<IWebElement>)Driver.FindElement(By.XPath("//div[@class='account_creation']//div[@class='clearfix']"));
-        WebElement randomCheckbox = radioButtons.get(new Random().NextInt64(1,2));
-
+        IList<IWebElement> genderRadioButtons => Driver.FindElements(By.Name("id_gender"));
+        IWebElement daysComboBox => Driver.FindElement(By.Name("days"));
+        IWebElement monthsComboBox => Driver.FindElement(By.Name("months"));
+        IWebElement yearsComboBox => Driver.FindElement(By.Name("years"));
 
 
         public void PickGender()
         {
-            WebElement randomCheckbox = checkboxes.get(new Random().nextInt(list.size()));
-
-
-            Random random = new();
-            List<WebElement> radios = Driver.findElements(By.xpath("//input"));
-            radios.get(random.NextInt64(radios.size())).click();
-
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Random randomGenerator = new();
+            int index = randomGenerator.Next(1, genderRadioButtons.Count);
+            genderRadioButtons[index].Click();
         }
+       
         public void ClickRadioButtonMr()
         {
             radioButtonMr.Click();
@@ -53,6 +53,33 @@ namespace TestProject1.Pages
         public void EnterPassword(string password)
         {
             passwordField.SendKeys(password);
+        }
+
+        public void PickADay()
+        {
+            SelectElement selectDays = new SelectElement(daysComboBox);
+            IList<IWebElement> daysOptions = selectDays.Options;
+            Random randomGenerator = new();
+            int index = randomGenerator.Next(1, daysOptions.Count);
+            daysOptions[index].Click();
+        }
+
+        public void PickAMonth()
+        {
+            SelectElement selectMonths = new SelectElement(monthsComboBox);
+            IList<IWebElement> monthsOptions = selectMonths.Options;
+            Random randomGenerator = new();
+            int index = randomGenerator.Next(1, monthsOptions.Count);
+            monthsOptions[index].Click();
+        }
+
+        public void PickAYear()
+        {
+            SelectElement selectYears = new SelectElement(yearsComboBox);
+            IList<IWebElement> yearsOptions = selectYears.Options;
+            Random randomGenerator = new();
+            int index = randomGenerator.Next(1, yearsOptions.Count);
+            yearsOptions[index].Click();
         }
     }
 }

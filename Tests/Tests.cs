@@ -21,10 +21,19 @@ namespace TestProject1.Tests
         {
             HomePage homePage = new();
             LoginPage loginPage = new();
+            AccountCreationPage accountCreationPage = new();
 
             homePage.ClickSignin();
             loginPage.InputEmailCreate();
             loginPage.ClickCreateAnAccount();
+            accountCreationPage.PickGender();
+            accountCreationPage.EnterFirstName("myFirstName");
+            accountCreationPage.EnterLastName("myLastName");
+            accountCreationPage.EnterPassword("myPassword");
+            accountCreationPage.PickADay();
+            accountCreationPage.PickAMonth();
+            accountCreationPage.PickAYear();
+
         }
 
         [TearDown]
