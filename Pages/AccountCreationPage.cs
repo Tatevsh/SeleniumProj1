@@ -20,13 +20,24 @@ namespace TestProject1.Pages
         IWebElement daysComboBox => Driver.FindElement(By.Name("days"));
         IWebElement monthsComboBox => Driver.FindElement(By.Name("months"));
         IWebElement yearsComboBox => Driver.FindElement(By.Name("years"));
+        IWebElement companyField => Driver.FindElement(By.Id("company"));
+        IWebElement address1Field => Driver.FindElement(By.Id("address1"));
+        IWebElement address2Field => Driver.FindElement(By.Id("address2"));
+        IWebElement cityField => Driver.FindElement(By.Id("city"));
+        IWebElement stateComboBox => Driver.FindElement(By.Name("id_state"));
+        IWebElement postcodeField => Driver.FindElement(By.Id("postcode"));
+        IWebElement countryComboBox => Driver.FindElement(By.Id("id_country"));
+        IWebElement additionalInfoField => Driver.FindElement(By.Id("other"));
+        IWebElement homePhoneField => Driver.FindElement(By.Id("phone"));
+        IWebElement mobilePhoneField => Driver.FindElement(By.Id("phone_mobile"));
+        IWebElement aliasField => Driver.FindElement(By.Id("alias"));
+        IWebElement registerButton => Driver.FindElement(By.Id("submitAccount"));
 
 
         public void PickGender()
         {
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            Random randomGenerator = new();
-            int index = randomGenerator.Next(1, genderRadioButtons.Count);
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            int index = ProvideRandomInt(1, genderRadioButtons.Count);
             genderRadioButtons[index].Click();
         }
        
@@ -59,8 +70,7 @@ namespace TestProject1.Pages
         {
             SelectElement selectDays = new SelectElement(daysComboBox);
             IList<IWebElement> daysOptions = selectDays.Options;
-            Random randomGenerator = new();
-            int index = randomGenerator.Next(1, daysOptions.Count);
+            int index = ProvideRandomInt(1, daysOptions.Count);
             daysOptions[index].Click();
         }
 
@@ -68,8 +78,7 @@ namespace TestProject1.Pages
         {
             SelectElement selectMonths = new SelectElement(monthsComboBox);
             IList<IWebElement> monthsOptions = selectMonths.Options;
-            Random randomGenerator = new();
-            int index = randomGenerator.Next(1, monthsOptions.Count);
+            int index = ProvideRandomInt(1, monthsOptions.Count);
             monthsOptions[index].Click();
         }
 
@@ -77,9 +86,76 @@ namespace TestProject1.Pages
         {
             SelectElement selectYears = new SelectElement(yearsComboBox);
             IList<IWebElement> yearsOptions = selectYears.Options;
-            Random randomGenerator = new();
-            int index = randomGenerator.Next(1, yearsOptions.Count);
+            int index = ProvideRandomInt(0, yearsOptions.Count);
             yearsOptions[index].Click();
+        } 
+
+        public void EnterCompany(string companyName)
+        {
+            companyField.SendKeys(companyName);
+        }
+
+        public void EnterAddress1(string address1)
+        {
+            address1Field.SendKeys(address1);
+        }
+
+        public void EnterAddress2(string address2)
+        {
+            address2Field.SendKeys(address2);
+        }
+
+        public void EnterCity(string city)
+        {
+            cityField.SendKeys(city);
+        }
+
+        public void PickAState()
+        {
+            SelectElement selectState = new SelectElement(stateComboBox);
+            IList<IWebElement> stateOptions = selectState.Options;
+            int index = ProvideRandomInt(0, stateOptions.Count);
+            stateOptions[index].Click();
+        }
+
+        public void EnterPostcode()
+        {
+            int randomPostcode = ProvideRandomInt(10000, 99999);
+            postcodeField.SendKeys(randomPostcode.ToString());
+        }
+
+        public void PickACountry()
+        {
+            SelectElement selectCountry = new SelectElement(countryComboBox);
+            //IList<IWebElement> countryOptions = selectCountry.Options;
+            selectCountry.SelectByText("United States");
+        }
+
+        public void EnterAdditionalInfo(string additionalInfo)
+        {
+            additionalInfoField.SendKeys(additionalInfo);
+        }
+
+        public void EnterHomePhone()
+        {
+            int homePhone = ProvideRandomInt(1, 1000);
+            homePhoneField.SendKeys(homePhone.ToString());
+        }
+
+        public void EnterMobilePhone()
+        {
+            int mobilePhone = ProvideRandomInt(1, 1000);
+            mobilePhoneField.SendKeys(mobilePhone.ToString());
+        }
+
+        public void EnterAlias(string alias)
+        {
+            aliasField.SendKeys(alias);
+        }
+
+        public void ClickOnRegisterButton()
+        {
+            registerButton.Click();
         }
     }
 }

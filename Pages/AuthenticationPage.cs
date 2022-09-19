@@ -3,22 +3,30 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
-    
+using System.Text;
+
 namespace TestProject1.Pages
 {
-    public class LoginPage : BasePage
+    public class AuthenticationPage : BasePage
     {
         IWebElement emailFieldCreate => Driver.FindElement(By.Id("email_create"));
         IWebElement buttonCreateAnAccount => Driver.FindElement(By.Id("SubmitCreate"));
         IWebElement emailFieldSignin => Driver.FindElement(By.Id("email"));
         IWebElement passwordFieldSignin => Driver.FindElement(By.Id("passwd"));
-        IWebElement buttonLogin => Driver.FindElement(By.Id("login"));
+        IWebElement buttonSignin => Driver.FindElement(By.Id("SubmitLogin"));
 
         public void InputEmailCreate()
         {
-            Random randomGenerator = new Random();
-            long randomInt = randomGenerator.NextInt64(1000);
-            emailFieldCreate.SendKeys("username" + randomInt + "@tatevs.tests");
+            int randomInt = ProvideRandomInt(0, 1000);
+            StringBuilder sb = new();
+            sb.Append("username");
+            sb.Append(randomInt.ToString());
+            sb.Append("@tatevs.tests");
+            emailFieldCreate.SendKeys(sb.ToString());
+
+            //Alternative 
+            //int randomInt = randomProvider(0, 1000);
+            //emailFieldCreate.SendKeys("username" + randomInt + "tatevs.tests");
         }
 
         public void ClickCreateAnAccount()
@@ -26,15 +34,15 @@ namespace TestProject1.Pages
             buttonCreateAnAccount.Click();
         }
 
-        public void InputEmailAndPasswordSignin (string email, string password)
+        public void InputEmailAndPasswordSignIn (string email, string password)
         {
             emailFieldSignin.SendKeys(email);
             passwordFieldSignin.SendKeys(password);
         }
 
-        public void ClickLogin()
+        public void ClickSignIn()
         {
-            buttonLogin.Click();
+            buttonSignin.Click();
         }
     }
 }
