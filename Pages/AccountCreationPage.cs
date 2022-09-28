@@ -11,6 +11,7 @@ namespace TestProject1.Pages
 {
     public class AccountCreationPage : BasePage
     {
+        //public AccountCreationPage accountCreationPage => new();
         IWebElement radioButtonMr => Driver.FindElement(By.Id("id_gender1"));
         IWebElement radioButtonMrs => Driver.FindElement(By.Id("id_gender2"));
         IWebElement firstNameField => Driver.FindElement(By.Id("customer_firstname"));
